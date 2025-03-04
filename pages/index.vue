@@ -1,4 +1,12 @@
 <template>
+
+    <div id="app">
+       <header>
+         <button @click="openModal" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Saiba Mais Sobre Mim</button>
+       </header>
+       <Modal :isOpen="isModalOpen" :description="description" @close="isModalOpen = false" />
+     </div>
+
     <ProfileInfo photo="/foto.jpg"
                  title="Fábio A. Raimundo" 
                  subtitle="fabio.ap.raimundo@gmail.com" 
@@ -22,14 +30,6 @@
                       title="github"
         />
     </main>
-
-    <div id="app" class="relative min-h-screen">
-        <header class="p-4">
-        <button @click="openModal" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Saiba Mais Sobre Mim</button>
-        </header>
-        <Modal :isOpen="isModalOpen" :description="description" @close="isModalOpen = false" />
-    </div>
-
 </template>
 
 <script>
