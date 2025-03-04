@@ -23,4 +23,32 @@
         />
     </main>
 
+    <div id="app" class="relative min-h-screen">
+        <header class="p-4">
+        <button @click="openModal" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Saiba Mais Sobre Mim</button>
+        </header>
+        <Modal :isOpen="isModalOpen" :description="description" @close="isModalOpen = false" />
+    </div>
+
 </template>
+
+<script>
+import Modal from './components/Modal.vue';
+
+export default {
+  components: {
+    Modal
+  },
+  data() {
+    return {
+      isModalOpen: false,
+      description: "Sou um engenheiro de dados que adora explorar o mundo do front-end. Tenho experiência em trabalhar com dados e estou sempre em busca de novas tecnologias e desafios para aprimorar minhas habilidades na criação de interfaces interessantes"
+    };
+  },
+  methods: {
+    openModal() {
+      this.isModalOpen = true;
+    }
+  }
+};
+</script>
